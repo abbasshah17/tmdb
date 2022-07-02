@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:paddingVertical="@dimen/carouselPaddingVertical"
+
+    tools:background="@color/app_bg_color"
+    >
+
+    <TextView
+        android:id="@+id/carouselTitle"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="@dimen/carouselTitleMarginHorizontal"
+
+        android:textSize="@dimen/carouselTitleTextSize"
+        android:textColor="@color/carousel_title_color"
+        android:textStyle="bold"
+
+        android:gravity="start"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/carouselItems"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        tools:text="Movie"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/carouselItems"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/carouselTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/content_item_layout"
+        tools:orientation="horizontal"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

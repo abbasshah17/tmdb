@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="@color/charcoal"
+        android:background="@color/app_bg_color"
 
         app:layoutDescription="@xml/search_content_layout_scene"
         >
@@ -53,6 +53,24 @@
 
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.9"
+            />
+
+        <TextView
+            android:id="@+id/searchInfoTitle"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/search_info_title_text"
+            android:textSize="@dimen/searchInfoTitleTextSize"
+            android:textStyle="bold"
+            android:textColor="@color/search_info_text_color"
+
+            app:layout_constraintTop_toBottomOf="@id/contentTopGuide"
+            app:layout_constraintBottom_toTopOf="@id/searchQueryField"
+
+            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
             />
 
         <EditText
@@ -102,7 +120,7 @@
         </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/contentItems"
+            android:id="@+id/carousels"
 
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -110,8 +128,13 @@
             app:layout_constraintTop_toBottomOf="@id/searchQueryField"
             app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
 
-            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
-            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:visibility="gone"
+
+            tools:listitem="@layout/carousel_layout"
+            tools:visibility="visible"
             />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
