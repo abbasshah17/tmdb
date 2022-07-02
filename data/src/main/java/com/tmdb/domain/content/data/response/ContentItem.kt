@@ -4,4 +4,5 @@ data class ContentItem(
     val poster: String,
     val title: String,
     val description: String,
+    val mediaType: String,
 )
