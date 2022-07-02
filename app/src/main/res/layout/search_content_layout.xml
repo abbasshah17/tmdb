@@ -66,6 +66,7 @@
             android:textColorHint="@color/silver"
             android:textColor="@color/bone_white"
 
+            android:inputType="text"
             android:maxLines="1"
             android:ellipsize="end"
 

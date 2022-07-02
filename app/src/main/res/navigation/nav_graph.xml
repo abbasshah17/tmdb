@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
+    app:startDestination="@id/contentFragment"
     >
 
+    <fragment
+        android:id="@+id/contentFragment"
+        android:name="com.starzplay.view.content.ContentFragment"
+        android:label="@string/content_label"
+        tools:layout="@layout/search_content_layout"
+        />
 </navigation>
