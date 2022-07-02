@@ -55,6 +55,7 @@ dependencies {
 
     implementation project(path: ':clean')
     implementation project(path: ':data')
+    implementation project(path: ':network')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
