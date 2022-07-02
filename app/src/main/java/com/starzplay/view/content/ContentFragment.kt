@@ -1,6 +1,7 @@
 package com.starzplay.view.content
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.activityViewModels
@@ -32,6 +33,9 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
     private fun setupAnimations() = binding.apply {
         searchQueryField.setOnEditorActionListener { textView, actionId, keyEvent ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
+                viewModel.searchContent(
+                    query = textView.text.toString()
+                )
                 searchQueryField.clearFocus()
                 true
             } else {
