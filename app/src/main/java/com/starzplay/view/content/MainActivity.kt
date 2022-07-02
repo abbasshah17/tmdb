@@ -22,8 +22,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
-    private val viewModel: ContentViewModel by viewModels()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
