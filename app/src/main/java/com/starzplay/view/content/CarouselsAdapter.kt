@@ -2,6 +2,7 @@ package com.starzplay.view.content
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.starzplay.R
 import com.starzplay.base.views.recycler.RecyclerAdapter
 import com.starzplay.base.views.recycler.RecyclerViewHolder
 import com.starzplay.databinding.CarouselLayoutBinding
@@ -13,5 +14,13 @@ class CarouselsAdapter: RecyclerAdapter<CarouselLayoutBinding, CarouselList>() {
         viewType: Int
     ): RecyclerViewHolder<CarouselLayoutBinding, CarouselList> {
         return CarouselViewHolder(inflateBinding(LayoutInflater.from(parent.context), viewType))
+    }
+
+    override fun areItemsSame(oldItem: CarouselList?, newItem: CarouselList?): Boolean {
+        return (oldItem?.carousel?.name?.equals(newItem?.carousel?.name) == true)
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return R.layout.carousel_layout
     }
 }

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.starzplay.R
 import com.starzplay.base.views.BaseFragment
 import com.starzplay.databinding.SearchContentLayoutBinding
+import com.starzplay.ext.merge
 import com.tmdb.domain.content.ContentViewModel
 
 class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
@@ -66,7 +67,7 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
     private fun setupObservers() {
         viewModel.carousels.observe(viewLifecycleOwner) { carousels ->
             carousels?.let { it ->
-                carouselsAdapter?.list = it
+                carouselsAdapter?.merge(it)
             }
         }
     }

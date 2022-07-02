@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class RecyclerAdapter<ItemViewBinding: ViewDataBinding, Model>
     : RecyclerView.Adapter<RecyclerViewHolder<ItemViewBinding, Model>>() {
 
-    var list: List<Model> = emptyList()
+    var list: MutableList<Model> = mutableListOf()
     set(value) {
-        //  TODO: Implement DiffUtils here.
         field = value
     }
 
@@ -30,4 +29,6 @@ abstract class RecyclerAdapter<ItemViewBinding: ViewDataBinding, Model>
     ) {
         holder.bind(list[position])
     }
+
+    abstract fun areItemsSame(oldItem: Model?, newItem: Model?): Boolean
 }
