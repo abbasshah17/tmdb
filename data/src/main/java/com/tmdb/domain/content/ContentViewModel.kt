@@ -1,6 +1,5 @@
 package com.tmdb.domain.content
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.aaa.clean.vm.CleanViewModel

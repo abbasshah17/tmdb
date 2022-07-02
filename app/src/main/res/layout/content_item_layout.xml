@@ -5,6 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
+    <data>
+        <variable
+            name="content"
+            type="com.tmdb.domain.content.data.response.ContentItem"
+            />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,6 +47,8 @@
             android:textAlignment="center"
 
             android:layout_marginTop="@dimen/carouselItemNameTopMargin"
+
+            android:text="@{content.title}"
 
             app:layout_constraintTop_toBottomOf="@id/shimmerCarouselItemImage"
 
