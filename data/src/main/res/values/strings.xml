@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">data</string>
-    <string name="api_search_path">search</string>
+    <string name="api_search_path">/search/multi</string>
 </resources>

@@ -3,11 +3,13 @@ package com.tmdb.domain.di
 import android.content.Context
 import com.tmdb.domain.BuildConfig
 import com.tmdb.domain.R
+import com.tmdb.domain.api.TmdbApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
@@ -40,5 +42,11 @@ object DataModule {
     @TmdbApiKey
     fun providesTmdbApiKey(): String {
         return BuildConfig.API_KEY
+    }
+
+    @Provides
+    @Singleton
+    fun providesTmdbApi(retrofit: Retrofit): TmdbApi {
+        return retrofit.create(TmdbApi::class.java)
     }
 }
