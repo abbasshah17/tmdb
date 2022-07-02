@@ -5,6 +5,9 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class ContentItem(
+    @Json(name = "id")
+    val id: Long,
+
     @Json(name = "poster_path")
     val poster: String?,
 

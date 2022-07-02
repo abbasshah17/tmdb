@@ -38,8 +38,8 @@ class ContentViewModel @Inject internal constructor(
                 adultContent = adultContent,
                 page = page
             )).onEach { carousels ->
-                _carousels.updateValue(carousels)
-            }.catch {
+                _carousels.updateValue(carousels as MutableList<CarouselList>)
+            }.catch { error ->
                 //  TODO: Propagate exceptions here.
             }.collect()
         }
@@ -59,6 +59,6 @@ class ContentViewModel @Inject internal constructor(
         }
     }
 
-    private val _carousels = MutableLiveData<List<CarouselList>>()
-    val carousels: LiveData<List<CarouselList>> get() = _carousels
+    private val _carousels = MutableLiveData<MutableList<CarouselList>>()
+    val carousels: LiveData<MutableList<CarouselList>> get() = _carousels
 }
