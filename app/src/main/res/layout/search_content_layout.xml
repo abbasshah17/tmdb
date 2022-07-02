@@ -81,6 +81,26 @@
             app:layout_constraintTop_toBottomOf="@id/contentTopGuide"
             />
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/searchResultsShimmer"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:visibility="gone"
+
+            app:layout_constraintTop_toBottomOf="@id/searchQueryField"
+            app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
+
+            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+            >
+
+            <include
+                layout="@layout/shimmer_carousels"
+                />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/contentItems"
 

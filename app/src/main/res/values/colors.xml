@@ -12,4 +12,6 @@
     <color name="silver">#C0C0C0</color>
     <color name="vanilla">#F3E5AB</color>
     <color name="pearl">#E2DFD2</color>
+
+    <color name="shimmer_placeholder_color">#e0e0e0</color>
 </resources>

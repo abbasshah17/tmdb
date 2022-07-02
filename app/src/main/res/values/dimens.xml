@@ -3,5 +3,10 @@
     <dimen name="contentSearchPadding">15dp</dimen>
     <dimen name="borderStrokeWidth">2dp</dimen>
 
+    <dimen name="carouselTitleTextSize">18sp</dimen>
+
+    <dimen name="carouselItemImageWidth">125dp</dimen>
+    <dimen name="carouselItemImageHeight">125dp</dimen>
+
     <integer name="animationDuration">250</integer>
 </resources>
