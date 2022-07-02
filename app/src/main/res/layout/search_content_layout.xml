@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/charcoal"
+
+        app:layoutDescription="@xml/search_content_layout_scene"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentTopGuide"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentBottomGuide"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentStartGuide"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentEndGuide"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9"
+            />
+
+        <EditText
+            android:id="@+id/searchQueryField"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:paddingHorizontal="@dimen/contentSearchPadding"
+            android:paddingVertical="@dimen/contentSearchPadding"
+
+            android:hint="@string/search_query_hint"
+            android:textColorHint="@color/silver"
+            android:textColor="@color/bone_white"
+
+            android:maxLines="1"
+            android:ellipsize="end"
+
+            android:background="@drawable/search_field_border"
+
+            app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
+            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+
+            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+            app:layout_constraintTop_toBottomOf="@id/contentTopGuide"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contentItems"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintTop_toBottomOf="@id/searchQueryField"
+            app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
+
+            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+            />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>
