@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/widget" />
+        <Constraint
+            android:id="@+id/searchQueryField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+            app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
+            app:layout_constraintTop_toBottomOf="@id/contentTopGuide" />
+        <Constraint
+            android:id="@+id/searchInfoTitle"
+            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/searchQueryField"
+            app:layout_constraintTop_toBottomOf="@id/contentTopGuide" />
+        <Constraint
+            android:id="@+id/carousels"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/searchQueryField"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/widget" />
+        <Constraint
+            android:id="@+id/searchQueryField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+            app:layout_constraintBottom_toTopOf="@id/carousels"
+            app:layout_constraintTop_toBottomOf="@id/contentTopGuide" />
+        <Constraint
+            android:id="@+id/searchInfoTitle"
+            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/searchQueryField"
+            app:layout_constraintTop_toBottomOf="@id/contentTopGuide"
+            android:visibility="invisible"
+            />
+        <Constraint
+            android:id="@+id/carousels"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/searchQueryField"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="@integer/animationDuration"
+        />
+</MotionScene>
