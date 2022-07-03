@@ -125,6 +125,7 @@
             android:hint="@string/search_query_hint"
             android:inputType="text"
             android:maxLines="1"
+            android:imeOptions="actionSearch"
 
             android:paddingHorizontal="@dimen/contentSearchPadding"
             android:paddingVertical="@dimen/contentSearchPadding"
