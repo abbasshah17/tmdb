@@ -54,6 +54,11 @@ abstract class TimeTicker constructor(
         timer?.cancel()
     }
 
+    fun release() {
+        timer?.cancel()
+        scope.cancel()
+    }
+
     fun restart() {
         cancel()
         start()

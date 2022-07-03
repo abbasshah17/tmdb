@@ -38,10 +38,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.playerFragment) {
-                binding.appbar.beGone()
+                supportActionBar?.hide()
                 immersive()
             } else {
-                binding.appbar.beVisible()
+                supportActionBar?.show()
                 exitImmersive()
             }
         }

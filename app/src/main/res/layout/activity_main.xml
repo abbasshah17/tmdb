@@ -8,7 +8,11 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.content.MainActivity">
+
+        android:background="@color/app_bg_color"
+
+        tools:context=".view.content.MainActivity"
+        >
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"

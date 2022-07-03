@@ -17,13 +17,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        tools:background="@color/app_bg_color"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            tools:background="@color/app_bg_color"
             >
 
             <androidx.constraintlayout.widget.Guideline
@@ -116,6 +116,8 @@
                 android:textColor="@color/content_detail_title_color"
                 android:maxLines="3"
 
+                android:textAlignment="viewStart"
+
                 app:layout_constraintTop_toTopOf="@id/contentDetailImage"
                 app:layout_constraintBottom_toBottomOf="@id/contentDetailImage"
 
@@ -139,6 +141,8 @@
                 android:text="@{content.description}"
                 android:textSize="@dimen/contentDetailTitleTextSize"
                 android:textColor="@color/content_detail_summary_color"
+
+                android:textAlignment="viewStart"
 
                 app:layout_constraintTop_toBottomOf="@id/contentDetailImage"
                 app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"

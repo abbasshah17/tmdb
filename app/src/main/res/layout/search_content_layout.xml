@@ -10,8 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:background="@color/app_bg_color"
-
         app:layoutDescription="@xml/search_content_layout_scene"
         >
 
@@ -65,6 +63,8 @@
             android:textSize="@dimen/searchInfoTitleTextSize"
             android:textStyle="bold"
             android:textColor="@color/search_info_text_color"
+
+            android:textAlignment="viewStart"
 
             app:layout_constraintTop_toBottomOf="@id/contentTopGuide"
             app:layout_constraintBottom_toTopOf="@id/searchQueryField"
@@ -123,9 +123,11 @@
             android:ellipsize="end"
 
             android:hint="@string/search_query_hint"
+            android:imeOptions="actionSearch"
             android:inputType="text"
             android:maxLines="1"
-            android:imeOptions="actionSearch"
+
+            android:textAlignment="viewStart"
 
             android:paddingHorizontal="@dimen/contentSearchPadding"
             android:paddingVertical="@dimen/contentSearchPadding"
