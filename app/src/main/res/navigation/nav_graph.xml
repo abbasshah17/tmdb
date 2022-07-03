@@ -12,6 +12,11 @@
         android:label="@string/content_label"
         tools:layout="@layout/search_content_layout"
         >
+        <action
+            android:id="@+id/contentDetail"
+            app:destination="@+id/contentDetailFragment"
+            >
+        </action>
     </fragment>
 
     <fragment
