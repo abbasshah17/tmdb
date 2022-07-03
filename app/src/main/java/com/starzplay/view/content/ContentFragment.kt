@@ -33,11 +33,18 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
 
     private fun setupAnimations() = binding.apply {
         searchQueryField.setOnEditorActionListener { textView, actionId, keyEvent ->
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
-                viewModel.searchContent(
-                    query = textView.text.toString()
-                )
-                searchQueryField.clearFocus()
+            if (
+                actionId == EditorInfo.IME_ACTION_DONE ||
+                actionId == EditorInfo.IME_ACTION_NEXT ||
+                actionId == EditorInfo.IME_ACTION_SEND ||
+                actionId == EditorInfo.IME_ACTION_SEARCH
+            ) {
+                performSearch(textView.text.toString())
+                true
+            } else {
+                false
+            }
+        }
                 true
             } else {
                 false
@@ -51,6 +58,16 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
                 content.transitionToState(R.id.end)
             }
         }
+    }
+
+    private fun performSearch(text: String) {
+        viewModel.searchContent(
+            query = text
+        )
+        binding.searchResultsShimmer.beVisible()
+        binding.searchQueryField.clearFocus()
+        binding.searchQueryField.hideKeyboard()
+        binding.carousels.scrollBy(0, -1000)
     }
 
     private var carouselsAdapter: CarouselsAdapter? = null
