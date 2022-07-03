@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tmdb="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="content"
+            type="com.tmdb.domain.content.data.response.ContentItem"
+            />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            tools:background="@color/app_bg_color"
+            >
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/contentTopGuide"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.05"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/contentBottomGuide"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.95"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/contentStartGuide"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/contentEndGuide"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9"
+                />
+
+            <ImageView
+                android:id="@+id/contentDetailImage"
+
+                android:layout_width="@dimen/carouselItemImageWidth"
+                android:layout_height="@dimen/carouselItemImageHeight"
+
+                tmdb:imagePath="@{content.contentImage}"
+
+                app:layout_constraintTop_toBottomOf="@id/contentTopGuide"
+                app:layout_constraintBottom_toTopOf="@id/contentDetailSummary"
+
+                app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+                app:layout_constraintEnd_toStartOf="@id/contentDetailTitle"
+
+                tools:src="@drawable/zsjl_poster"
+                />
+
+            <TextView
+                android:id="@+id/contentDetailTitle"
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+
+                android:layout_marginStart="@dimen/contentDetailTitleMarginStart"
+
+                android:text="@{content.contentTitle}"
+                android:textSize="@dimen/contentDetailTitleTextSize"
+                android:textColor="@color/content_detail_title_color"
+                android:maxLines="3"
+
+                app:layout_constraintTop_toTopOf="@id/contentDetailImage"
+                app:layout_constraintBottom_toBottomOf="@id/contentDetailImage"
+
+                app:layout_constraintStart_toEndOf="@id/contentDetailImage"
+                app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintVertical_bias="0"
+
+                tools:text="Zack Snyder's Justice League (2021)"
+                />
+
+            <TextView
+                android:id="@+id/contentDetailSummary"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/contentDetailSummaryMarginTop"
+
+                android:text="@{content.description}"
+                android:textSize="@dimen/contentDetailTitleTextSize"
+                android:textColor="@color/content_detail_summary_color"
+
+                app:layout_constraintTop_toBottomOf="@id/contentDetailImage"
+                app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
+
+                app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+                app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+
+                tools:text="Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions."
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
