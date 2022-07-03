@@ -92,6 +92,10 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
         )
 
         addItemDecoration(TopAnchorDecorator(binding.searchInfoTitle))
+
+        if (!viewModel.carousels.value.isNullOrEmpty()) {
+            binding.content.jumpToState(R.id.end)
+        }
     }
 
     private fun setupObservers() {

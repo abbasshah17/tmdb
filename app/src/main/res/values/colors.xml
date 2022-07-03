@@ -20,4 +20,6 @@
     <color name="carousel_title_color">@color/off_white</color>
     <color name="content_title_color">@color/peach</color>
     <color name="search_info_text_color">@color/peach</color>
+    <color name="content_detail_title_color">@color/content_title_color</color>
+    <color name="content_detail_summary_color">@color/off_white</color>
 </resources>

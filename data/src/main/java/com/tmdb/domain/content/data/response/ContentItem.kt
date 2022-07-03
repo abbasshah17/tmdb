@@ -1,8 +1,11 @@
 package com.tmdb.domain.content.data.response
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @JsonClass(generateAdapter = true)
 data class ContentItem(
     @Json(name = "id")
@@ -28,7 +31,7 @@ data class ContentItem(
 
     @Json(name = "media_type")
     val mediaType: String,
-) {
+): Parcelable {
     val contentTitle: String get() {
         return if (title.isNullOrBlank()) {
             name ?: ""
