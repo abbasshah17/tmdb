@@ -33,6 +33,7 @@
             android:textSize="@dimen/carouselTitleTextSize"
             android:textColor="@color/carousel_title_color"
             android:textStyle="bold"
+            android:textAllCaps="true"
 
             android:gravity="start"
 
