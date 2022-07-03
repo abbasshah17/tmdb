@@ -7,6 +7,7 @@
     >
 
     <data>
+        <import type="android.view.View" />
         <variable
             name="content"
             type="com.tmdb.domain.content.data.response.ContentItem"
@@ -80,6 +81,26 @@
                 app:layout_constraintEnd_toStartOf="@id/contentDetailTitle"
 
                 tools:src="@drawable/zsjl_poster"
+                />
+
+            <ImageView
+                android:id="@+id/playerBtnOverlay"
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+
+                android:src="@drawable/ic_play_details"
+                android:alpha="0.7"
+
+                android:layout_gravity="center"
+
+                android:visibility="@{content.isVideoType() ? View.VISIBLE : View.GONE}"
+
+                app:layout_constraintTop_toTopOf="@id/contentDetailImage"
+                app:layout_constraintBottom_toBottomOf="@id/contentDetailImage"
+
+                app:layout_constraintStart_toStartOf="@id/contentDetailImage"
+                app:layout_constraintEnd_toEndOf="@id/contentDetailImage"
                 />
 
             <TextView
