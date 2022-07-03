@@ -1,7 +1,6 @@
 package com.starzplay.view.content
 
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -10,10 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.starzplay.R
 import com.starzplay.base.views.BaseFragment
 import com.starzplay.databinding.SearchContentLayoutBinding
-import com.starzplay.ext.*
+import com.starzplay.ext.beInvisible
+import com.starzplay.ext.beVisible
+import com.starzplay.ext.hideKeyboard
+import com.starzplay.ext.merge
 import com.starzplay.view.recycler.decorators.TopAnchorDecorator
 import com.tmdb.domain.content.ContentViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
 
     override val layout: Int
@@ -34,7 +38,7 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
     }
 
     private fun setupAnimations() = binding.apply {
-        searchQueryField.setOnEditorActionListener { textView, actionId, keyEvent ->
+        searchQueryField.setOnEditorActionListener { textView, actionId, _ ->
             if (
                 actionId == EditorInfo.IME_ACTION_DONE ||
                 actionId == EditorInfo.IME_ACTION_NEXT ||
@@ -48,7 +52,7 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
             }
         }
 
-        searchQueryField.setOnKeyListener { view, i, keyEvent ->
+        searchQueryField.setOnKeyListener { view, _, keyEvent ->
             if (keyEvent.keyCode == KeyEvent.KEYCODE_BACK) {
                 view.clearFocus()
                 true
@@ -57,7 +61,7 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
             }
         }
 
-        searchQueryField.setOnFocusChangeListener { view, focus ->
+        searchQueryField.setOnFocusChangeListener { _, focus ->
             if (focus) {
                 content.transitionToState(R.id.start)
             } else {
