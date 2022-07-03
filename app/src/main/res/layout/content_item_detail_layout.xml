@@ -17,13 +17,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        tools:background="@color/app_bg_color"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            tools:background="@color/app_bg_color"
             >
 
             <androidx.constraintlayout.widget.Guideline
