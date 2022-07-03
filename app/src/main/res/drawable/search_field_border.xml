@@ -16,6 +16,9 @@
                 android:color="@color/vanilla"
                 android:width="@dimen/borderStrokeWidth"
                 />
+            <solid
+                android:color="@color/app_bg_color"
+                />
         </shape>
     </item>
 
@@ -30,6 +33,9 @@
             <stroke
                 android:color="@color/pearl"
                 android:width="@dimen/borderStrokeWidth"
+                />
+            <solid
+                android:color="@color/app_bg_color"
                 />
         </shape>
     </item>
