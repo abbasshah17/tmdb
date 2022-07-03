@@ -31,6 +31,8 @@ class ContentFetcherUseCase @Inject internal constructor(
                 ),
                 list = carousel.value
             )
+        }.sortedBy { carouselList ->
+            carouselList.carousel.name
         }
     }
 }
