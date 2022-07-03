@@ -2,6 +2,9 @@ package com.starzplay.ext
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.starzplay.base.views.recycler.RecyclerAdapter
 
 fun <ViewBinding: ViewDataBinding, T: Any> RecyclerAdapter<ViewBinding, T>.merge(newList: MutableList<out T>) {
@@ -62,4 +65,12 @@ abstract class RecyclerDiffCallback(
     fun getItemAt(position: Int, list: List<Any>?): Any? {
         return list?.get(position)
     }
+}
+
+fun RecyclerView.isLinearLayoutManagerAttached(): Boolean {
+    return layoutManager is LinearLayoutManager
+}
+
+fun RecyclerView.isGridLayoutManagerAttached(): Boolean {
+    return layoutManager is GridLayoutManager
 }

@@ -2,6 +2,7 @@ package com.starzplay.view.content
 
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.activityViewModels
@@ -9,7 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.starzplay.R
 import com.starzplay.base.views.BaseFragment
 import com.starzplay.databinding.SearchContentLayoutBinding
-import com.starzplay.ext.merge
+import com.starzplay.ext.*
+import com.starzplay.view.recycler.decorators.TopAnchorDecorator
 import com.tmdb.domain.content.ContentViewModel
 
 class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
@@ -45,6 +47,10 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
                 false
             }
         }
+
+        searchQueryField.setOnKeyListener { view, i, keyEvent ->
+            if (keyEvent.keyCode == KeyEvent.KEYCODE_BACK) {
+                view.clearFocus()
                 true
             } else {
                 false
@@ -72,6 +78,7 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
 
     private var carouselsAdapter: CarouselsAdapter? = null
     private fun setupList() = binding.carousels.apply {
+        binding.searchResultsShimmer.beInvisible()
         carouselsAdapter = CarouselsAdapter()
         adapter = carouselsAdapter
         layoutManager = LinearLayoutManager(
@@ -86,6 +93,8 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
     private fun setupObservers() {
         viewModel.carousels.observe(viewLifecycleOwner) { carousels ->
             carousels?.let { it ->
+                binding.searchResultsShimmer.beInvisible()
+                binding.carousels.scrollBy(0, -binding.carousels.computeVerticalScrollExtent())
                 carouselsAdapter?.merge(it)
             }
         }
