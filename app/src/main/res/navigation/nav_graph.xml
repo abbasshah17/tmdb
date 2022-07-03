@@ -11,5 +11,25 @@
         android:name="com.starzplay.view.content.ContentFragment"
         android:label="@string/content_label"
         tools:layout="@layout/search_content_layout"
-        />
+        >
+        <action
+            android:id="@+id/contentDetail"
+            app:destination="@id/contentDetailFragment"
+            >
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/contentDetailFragment"
+        android:name="com.starzplay.view.detail.ContentItemDetailFragment"
+        android:label="@string/content_detail_label"
+
+        tools:layout="@layout/content_item_detail_layout"
+        >
+        <argument
+            android:name="contentItem"
+            app:argType="com.tmdb.domain.content.data.response.ContentItem"
+            />
+    </fragment>
+
 </navigation>

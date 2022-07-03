@@ -13,7 +13,9 @@ class CarouselsAdapter: RecyclerAdapter<CarouselLayoutBinding, CarouselList>() {
         parent: ViewGroup,
         viewType: Int
     ): RecyclerViewHolder<CarouselLayoutBinding, CarouselList> {
-        return CarouselViewHolder(inflateBinding(LayoutInflater.from(parent.context), viewType))
+        return CarouselViewHolder(
+            binding = inflateBinding(LayoutInflater.from(parent.context), viewType)
+        )
     }
 
     override fun areItemsSame(oldItem: CarouselList?, newItem: CarouselList?): Boolean {

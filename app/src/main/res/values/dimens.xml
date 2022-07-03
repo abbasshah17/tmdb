@@ -16,5 +16,10 @@
     <dimen name="searchInfoTitleBottomMargin">25dp</dimen>
     <dimen name="searchInfoTitleTextSize">28sp</dimen>
 
+    <dimen name="contentDetailTitleTextSize">18sp</dimen>
+    <dimen name="contentDetailSummaryTextSize">14sp</dimen>
+    <dimen name="contentDetailTitleMarginStart">10dp</dimen>
+    <dimen name="contentDetailSummaryMarginTop">20dp</dimen>
+
     <integer name="animationDuration">250</integer>
 </resources>
