@@ -7,8 +7,8 @@
     <dimen name="contentItemTitleTextSize">16sp</dimen>
 
     <dimen name="carouselTitleMarginHorizontal">10dp</dimen>
-    <dimen name="carouselItemImageWidth">125dp</dimen>
-    <dimen name="carouselItemImageHeight">125dp</dimen>
+    <dimen name="carouselItemImageWidth">150dp</dimen>
+    <dimen name="carouselItemImageHeight">225dp</dimen>
     <dimen name="carouselPaddingVertical">20dp</dimen>
     <dimen name="contentItemPaddingVertical">20dp</dimen>
     <dimen name="carouselItemNameTopMargin">10dp</dimen>

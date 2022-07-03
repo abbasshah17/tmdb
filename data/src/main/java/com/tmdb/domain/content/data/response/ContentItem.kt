@@ -11,6 +11,12 @@ data class ContentItem(
     @Json(name = "poster_path")
     val poster: String?,
 
+    @Json(name = "backdrop_path")
+    val backdrop: String?,
+
+    @Json(name = "profile_path")
+    val profile: String?,
+
     @Json(name = "title")
     val title: String?,
 
@@ -22,4 +28,17 @@ data class ContentItem(
 
     @Json(name = "media_type")
     val mediaType: String,
-)
+) {
+
+    val contentImage: String get() {
+        return if (!poster.isNullOrBlank()) {
+            poster
+        } else if (!backdrop.isNullOrBlank()) {
+            backdrop
+        } else if (!profile.isNullOrBlank()) {
+            profile
+        } else {
+            ""
+        }
+    }
+}
