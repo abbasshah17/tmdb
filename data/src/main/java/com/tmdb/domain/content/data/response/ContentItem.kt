@@ -29,6 +29,13 @@ data class ContentItem(
     @Json(name = "media_type")
     val mediaType: String,
 ) {
+    val contentTitle: String get() {
+        return if (title.isNullOrBlank()) {
+            name ?: ""
+        } else {
+            title
+        }
+    }
 
     val contentImage: String get() {
         return if (!poster.isNullOrBlank()) {
