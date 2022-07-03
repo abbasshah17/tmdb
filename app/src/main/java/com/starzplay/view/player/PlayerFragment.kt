@@ -206,6 +206,9 @@ class PlayerFragment: BaseFragment<VideoPlayerLayoutBinding>() {
 
     override fun onDestroyView() {
         player.stop()
+        player.release()
+
+        timerRunner.release()
 
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_USER
 
