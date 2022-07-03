@@ -41,6 +41,7 @@ class ContentViewModel @Inject internal constructor(
                 _carousels.updateValue(carousels as MutableList<CarouselList>)
             }.catch { error ->
                 //  TODO: Propagate exceptions here.
+                Log.e(TAG, error.message, error)
             }.collect()
         }
 
@@ -61,4 +62,8 @@ class ContentViewModel @Inject internal constructor(
 
     private val _carousels = MutableLiveData<MutableList<CarouselList>>()
     val carousels: LiveData<MutableList<CarouselList>> get() = _carousels
+
+    companion object {
+        const val TAG = "ContentViewModel"
+    }
 }
