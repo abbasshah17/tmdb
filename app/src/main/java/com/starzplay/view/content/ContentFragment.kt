@@ -79,6 +79,8 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
             LinearLayoutManager.VERTICAL,
             false
         )
+
+        addItemDecoration(TopAnchorDecorator(binding.searchInfoTitle))
     }
 
     private fun setupObservers() {
