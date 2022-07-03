@@ -18,9 +18,21 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("debug") {
+            def buildProperties = loadBuildProperties()
+            buildConfigField("String", "BASE_URL", buildProperties['base_url'])
+            buildConfigField("String", "API_VERSION", buildProperties['api_version'])
+            buildConfigField("String", "API_KEY", buildProperties['api_key'])
+        }
+
+        getByName("release") {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            def buildProperties = loadBuildProperties()
+            buildConfigField("String", "BASE_URL", buildProperties['base_url'])
+            buildConfigField("String", "API_VERSION", buildProperties['api_version'])
+            buildConfigField("String", "API_KEY", buildProperties['api_key'])
         }
     }
     compileOptions {
@@ -30,6 +42,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+def loadBuildProperties() {
+
+    def buildPropertiesFile = file("src/build.properties")
+    def buildProperties = new Properties()
+    buildProperties.load(new FileInputStream(buildPropertiesFile))
+
+    return buildProperties
 }
 
 dependencies {
@@ -42,9 +63,13 @@ dependencies {
     implementation "com.google.dagger:hilt-android:2.38.1"
     kapt "com.google.dagger:hilt-compiler:2.38.1"
 
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.0"
+
+    implementation "com.squareup.moshi:moshi-kotlin:1.12.0"
 
     implementation project(path: ':clean')
+    implementation project(path: ':network')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

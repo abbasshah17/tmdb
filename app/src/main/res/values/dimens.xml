@@ -1,3 +1,20 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="contentSearchPadding">15dp</dimen>
+    <dimen name="borderStrokeWidth">2dp</dimen>
+
+    <dimen name="carouselTitleTextSize">22sp</dimen>
+    <dimen name="contentItemTitleTextSize">16sp</dimen>
+
+    <dimen name="carouselTitleMarginHorizontal">10dp</dimen>
+    <dimen name="carouselItemImageWidth">150dp</dimen>
+    <dimen name="carouselItemImageHeight">225dp</dimen>
+    <dimen name="carouselPaddingVertical">20dp</dimen>
+    <dimen name="contentItemPaddingVertical">20dp</dimen>
+    <dimen name="carouselItemNameTopMargin">10dp</dimen>
+    <dimen name="carousalItemImageHorizontalMargin">8dp</dimen>
+    <dimen name="searchInfoTitleBottomMargin">25dp</dimen>
+    <dimen name="searchInfoTitleTextSize">28sp</dimen>
+
+    <integer name="animationDuration">250</integer>
 </resources>

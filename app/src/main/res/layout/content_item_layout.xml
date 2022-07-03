@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tmdb="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="content"
+            type="com.tmdb.domain.content.data.response.ContentItem"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:paddingVertical="@dimen/contentItemPaddingVertical"
+
+        tools:background="@color/app_bg_color"
+        >
+
+        <ImageView
+            android:id="@+id/shimmerCarouselItemImage"
+
+            android:layout_width="@dimen/carouselItemImageWidth"
+            android:layout_height="@dimen/carouselItemImageHeight"
+
+            android:layout_marginHorizontal="@dimen/carousalItemImageHorizontalMargin"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            tmdb:imagePath="@{content.contentImage}"
+
+            tools:scaleType="centerCrop"
+            tools:src="@drawable/zsjl_poster"
+            />
+
+        <TextView
+            android:id="@+id/shimmerCarouselItemName"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:textSize="@dimen/contentItemTitleTextSize"
+            android:textColor="@color/content_title_color"
+            android:textAlignment="center"
+
+            android:maxLines="2"
+
+            android:layout_marginTop="@dimen/carouselItemNameTopMargin"
+
+            android:text="@{content.contentTitle}"
+
+            app:layout_constraintTop_toBottomOf="@id/shimmerCarouselItemImage"
+
+            app:layout_constraintStart_toStartOf="@id/shimmerCarouselItemImage"
+            app:layout_constraintEnd_toEndOf="@id/shimmerCarouselItemImage"
+
+            tools:text="Zack Snyder's Justice League (2021)"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

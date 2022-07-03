@@ -16,3 +16,4 @@ rootProject.name = "StarzPlay"
 include ':app'
 include ':data'
 include ':clean'
+include ':network'

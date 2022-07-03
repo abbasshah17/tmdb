@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">data</string>
+    <string name="api_search_path">/search/multi</string>
+    <string name="image_resource_base">https://image.tmdb.org/t/p/original</string>
 </resources>
