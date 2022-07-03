@@ -14,7 +14,7 @@
         >
         <action
             android:id="@+id/contentDetail"
-            app:destination="@+id/contentDetailFragment"
+            app:destination="@id/contentDetailFragment"
             >
         </action>
     </fragment>
