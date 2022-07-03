@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:background="@color/app_bg_color"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentTopGuide"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentBottomGuide"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentStartGuide"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.025"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/contentEndGuide"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.975"
+            />
+
+        <com.starzplay.view.player.VideoSurfaceView
+            android:id="@+id/playerSurfaceView"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:keepScreenOn="true"
+
+            tools:foreground="@color/app_bg_color"
+            />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/playerControls"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:constraint_referenced_ids="playPauseBtn,playerSeekBar"
+            />
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+
+            android:id="@+id/playerBuffering"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <ImageView
+            android:id="@+id/playPauseBtn"
+
+            android:layout_width="@dimen/playerPauseBtnWidth"
+            android:layout_height="@dimen/playerPauseBtnHeight"
+
+            android:src="@drawable/ic_pause"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <SeekBar
+            android:id="@+id/playerSeekBar"
+
+            android:layout_width="0dp"
+            android:layout_height="@dimen/seekbarHeight"
+
+            android:max="100"
+
+            app:layout_constraintTop_toBottomOf="@id/contentBottomGuide"
+            app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
+
+            app:layout_constraintStart_toEndOf="@id/contentStartGuide"
+            app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

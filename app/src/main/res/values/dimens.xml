@@ -21,5 +21,9 @@
     <dimen name="contentDetailTitleMarginStart">10dp</dimen>
     <dimen name="contentDetailSummaryMarginTop">20dp</dimen>
 
+    <dimen name="seekbarHeight">10dp</dimen>
+    <dimen name="playerPauseBtnWidth">50dp</dimen>
+    <dimen name="playerPauseBtnHeight">50dp</dimen>
+
     <integer name="animationDuration">250</integer>
 </resources>
