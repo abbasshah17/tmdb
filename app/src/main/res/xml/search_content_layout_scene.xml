@@ -22,13 +22,12 @@
             app:layout_constraintTop_toBottomOf="@id/contentTopGuide" />
         <Constraint
             android:id="@+id/carousels"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
-            android:visibility="gone"
+            android:visibility="invisible"
             app:layout_constraintTop_toBottomOf="@id/searchQueryField"
-            app:layout_constraintStart_toStartOf="parent" />
+            />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -39,8 +38,10 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@id/contentEndGuide"
             app:layout_constraintStart_toEndOf="@id/contentStartGuide"
-            app:layout_constraintBottom_toTopOf="@id/carousels"
-            app:layout_constraintTop_toBottomOf="@id/contentTopGuide" />
+            app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
+            app:layout_constraintTop_toBottomOf="@id/contentTopGuide"
+            app:layout_constraintVertical_bias="0.02"
+            />
         <Constraint
             android:id="@+id/searchInfoTitle"
             app:layout_constraintStart_toEndOf="@id/contentStartGuide"
@@ -53,13 +54,12 @@
             />
         <Constraint
             android:id="@+id/carousels"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/contentBottomGuide"
             android:visibility="visible"
-            app:layout_constraintTop_toBottomOf="@id/searchQueryField"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
     </ConstraintSet>
 
     <Transition
