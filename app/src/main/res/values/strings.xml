@@ -12,6 +12,7 @@
 
     <string name="content_label">Content</string>
     <string name="content_detail_label">ContentDetail</string>
+    <string name="player_detail_label">Player</string>
     <string name="search_query_hint">Start Looking</string>
     <string name="search_info_title_text">Search your favourite\n  Movies,\n  TV Shows\n  and Stars</string>
 </resources>

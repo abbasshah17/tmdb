@@ -30,8 +30,15 @@ data class ContentItem(
     val description: String?,
 
     @Json(name = "media_type")
-    val mediaType: String,
+    val mediaType: String
 ): Parcelable {
+    fun isVideoType(): Boolean {
+        return (
+                mediaType == "movie" ||
+                mediaType == "tv"
+        )
+    }
+
     val contentTitle: String get() {
         return if (title.isNullOrBlank()) {
             name ?: ""
@@ -52,3 +59,5 @@ data class ContentItem(
         }
     }
 }
+
+val ContentItem.playUrl: String get() = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"

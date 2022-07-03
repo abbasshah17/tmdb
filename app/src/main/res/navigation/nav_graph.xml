@@ -30,6 +30,24 @@
             android:name="contentItem"
             app:argType="com.tmdb.domain.content.data.response.ContentItem"
             />
+
+        <action
+            android:id="@+id/toPlayerFragment"
+            app:destination="@id/playerFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.starzplay.view.player.PlayerFragment"
+        android:label="@string/player_detail_label"
+
+        tools:layout="@layout/video_player_layout"
+        >
+        <argument
+            android:name="url"
+            app:argType="string"
+            />
     </fragment>
 
 </navigation>
