@@ -48,6 +48,8 @@
             android:textColor="@color/content_title_color"
             android:textAlignment="center"
 
+            android:maxLines="2"
+
             android:layout_marginTop="@dimen/carouselItemNameTopMargin"
 
             android:text="@{content.contentTitle}"
