@@ -68,6 +68,12 @@ class ContentFragment: BaseFragment<SearchContentLayoutBinding>() {
                 content.transitionToState(R.id.end)
             }
         }
+
+        content.setOnClickListener {
+            if (!viewModel.carousels.value.isNullOrEmpty()) {
+                searchQueryField.clearFocus()
+            }
+        }
     }
 
     private fun performSearch(text: String) {
